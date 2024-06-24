@@ -10,18 +10,20 @@ async function performLoginAndAction(username, password) {
 
   await page.goto("https://www.siwonschool.com/?s=challenge_refund");
 
-  page.setDefaultTimeout(3000);
+  console.log("0");
+  await page.waitForSelector("#input_id");
 
+  //로그인
   await page.evaluate(
     (username, password) => {
       const idInput = document.querySelector("#input_id");
       const pwInput = document.querySelector("#input_pw");
       const loginBtn = document.querySelector("#bt_login");
       if (idInput) {
-        idInput.value = username; // Replace with your actual username
+        idInput.value = username;
       }
       if (pwInput) {
-        pwInput.value = password; // Replace with your actual password
+        pwInput.value = password;
       }
       if (idInput || pwInput) {
         loginBtn.click();
@@ -31,11 +33,11 @@ async function performLoginAndAction(username, password) {
     password
   );
 
-  // Wait for navigation after login
   await page.waitForNavigation();
 
-  // Navigate to the next URL
   await page.goto("https://www.siwonschool.com/?s=challenge_refund");
+
+  await page.waitForSelector(".box");
 
   await page.evaluate(() => {
     const btn = document.querySelector(".box");
