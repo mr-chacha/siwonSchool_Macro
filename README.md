@@ -16,3 +16,6 @@
 - npm install
 - npm start : 개발모드
 - npm run build : 같은 디렉토리내에 데스크탑 앱이 빌드됨
+
+# 4. 개발블로그
+개발 블로그 : [클릭](https://velog.io/@c9926/100%EC%9D%BC-%EC%B1%8C%EB%A6%B0%EC%A7%80-%EB%A7%A4%ED%81%AC%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0) 
