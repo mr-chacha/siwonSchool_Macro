@@ -1,5 +1,7 @@
-# 시원스쿨 메크로
+# 챌린지 메크로
+
 ![macro](https://github.com/mr-chacha/siwonSchool_Macro/assets/117566375/74032066-76e6-4e42-bd2d-18902fed649e)
+![macro](https://github.com/mr-chacha/siwonSchool_Macro/assets/117566375/f407cdc0-fb95-4be1-ba33-1a9eb8945c33)
 
 # 1. 프로젝트 소개
 - 시원스쿨 100일 챌린지 30일간 꾸준히 보다가 하루 까먹고 안봐서 만들어둔 프로젝트
