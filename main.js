@@ -19,7 +19,6 @@ serverApp.get("/", (req, res) => {
 
 let username;
 let password;
-let action;
 
 serverApp.post("/login", (req, res) => {
   username = req.body.username;
@@ -33,7 +32,7 @@ serverApp.post("/login", (req, res) => {
 });
 
 serverApp.post("/play", async (req, res) => {
-  action = req.body.action;
+  const action = req.body.action;
   if (action === "play") {
     try {
       await performLoginAndAction(username, password);
@@ -43,9 +42,9 @@ serverApp.post("/play", async (req, res) => {
       res.status(500).send("Puppeteer 작업 중 오류가 발생했습니다.");
     }
   } else {
+    res.status(400).send("잘못된 요청입니다.");
   }
   console.log("action,", action);
-  res.status(200).send("챌린지 듣기시작");
 });
 
 // Express 서버 시작
