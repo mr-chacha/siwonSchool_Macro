@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>시원스쿨 100일 챌린지 메크로</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <h1>시원스쿨 100일 챌린지 메크로</h1>
+      <p>까먹고 챌린지를 실패하지 않기 위해 만든 매크로</p>
+    </div>
+    <div id="currentTime"></div>
+    <div>
+      <form id="loginForm" method="POST" action="/login">
+        <div>아이디 : <input type="text" name="username" /></div>
+        <div>비밀번호 : <input type="password" name="password" /></div>
+        <button type="submit">로그인</button>
+      </form>
+      <div id="loginMessage" class="hidden">로그인 완료</div>
+    </div>
+
+    <div id="content" class="box hidden">
+      <div class="boxBtn" id="play" method="POST" action="/play">
+        챌린지 강의 듣기
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+    <script src="play.js"></script>
+    <script src="time.js"></script>
+  </body>
+</html>
