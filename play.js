@@ -26,7 +26,7 @@ document.getElementById("play").addEventListener("click", async function () {
     // 오전 12시 1분에 요청 보내기
     if (hours === 0 && minutes === 1) {
       sendPlayRequest();
-      clearInterval(intervalId); // 요청을 보낸 후 interval을 중지합니다.
+      clearInterval(intervalId);
     }
   };
 
