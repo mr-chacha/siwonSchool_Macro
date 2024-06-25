@@ -15,7 +15,6 @@ document
     });
 
     if (response.ok) {
-      console.log("response", response);
       alert("로그인 완료");
       document.getElementById("content").classList.remove("hidden");
       document.getElementById("loginForm").classList.add("hidden");

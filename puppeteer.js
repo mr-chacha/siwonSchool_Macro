@@ -10,7 +10,6 @@ async function performLoginAndAction(username, password) {
 
   await page.goto("https://www.siwonschool.com/?s=challenge_refund");
 
-  console.log("0");
   await page.waitForSelector("#input_id");
 
   //로그인

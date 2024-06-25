@@ -20,6 +20,7 @@ serverApp.get("/", (req, res) => {
 let username;
 let password;
 
+// 로그인일때
 serverApp.post("/login", (req, res) => {
   username = req.body.username;
   password = req.body.password;
@@ -31,7 +32,9 @@ serverApp.post("/login", (req, res) => {
   }
 });
 
+// 플레이일때
 serverApp.post("/play", async (req, res) => {
+  console.log("req", req);
   const action = req.body.action;
   if (action === "play") {
     try {

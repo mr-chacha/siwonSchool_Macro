@@ -9,27 +9,37 @@ document.getElementById("play").addEventListener("click", async function () {
     });
 
     if (response.ok) {
-      alert("챌린지 강의 듣기 시작");
+      alert("챌린지 강의 듣기 요청이 전송되었습니다.");
     } else {
-      alert("챌린지 강의 듣기 실패");
+      alert("챌린지 강의 듣기 요청에 실패했습니다.");
     }
   };
 
   await sendPlayRequest();
-
-  // 특정 시간이 될 때까지 체크하는 함수
-  const checkTimeAndSendRequest = () => {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-
-    // 오전 12시 1분에 요청 보내기
-    if (hours === 0 && minutes === 1) {
-      sendPlayRequest();
-      clearInterval(intervalId);
-    }
-  };
-
-  // 1초마다 현재 시간을 체크합니다.
-  const intervalId = setInterval(checkTimeAndSendRequest, 1000);
 });
+
+function scheduleClickAtEightAM() {
+  const now = new Date();
+  const eightAM = new Date();
+  eightAM.setHours(8, 0, 0, 0);
+
+  if (now > eightAM) {
+    eightAM.setDate(eightAM.getDate() + 1);
+  }
+
+  const timeUntilEightAM = eightAM - now;
+
+  setTimeout(() => {
+    document.getElementById("play").click();
+    // 이후 매일 오전 8시에 클릭하도록 설정
+    setInterval(() => {
+      document.getElementById("play").click();
+    }, 24 * 60 * 60 * 1000); // 24시간(1일)마다 클릭
+  }, timeUntilEightAM);
+}
+
+scheduleClickAtEightAM();
+// 10초마다 'play'라는 ID를 가진 요소를 클릭합니다.
+// setInterval(() => {
+//   document.getElementById("play").click();
+// }, 10000);
